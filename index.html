@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Coffee</title>
+
+    <!-- CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<audio id="audio1" src="./sound/audio1.mp3"></audio>
+<audio id="audio2" src="./sound/audio2.mp3"></audio>
+<audio id="audio3" src="./sound/audio3.mp3"></audio>
+<audio id="audio4" src="./sound/audio4.mp3"></audio>
+<audio id="audio5" src="./sound/audio5.wav"></audio>
+
+<body>
+    <div class="container-fluid">
+        <h1 id="coffeeText">
+            Let's make a coffee!<br>
+        </h1>
+
+        <div class="main-container">
+            <div class="cup-container" id="cupCoffee">
+                <img class="cup" src="./img/cup.png" id="cup">
+                <img class="ground-coffe" src="./img/./ground-coffe/ground-coffe-gif.gif" id="groundCoffee">
+                <img class="water" src="./img/./water/water.gif" id="water">
+                <img class="coffee" src="./img/./coffee/coffee.gif" id="coffee">
+                <img class="stir" src="./img/./stir/stir.gif" id="stir">
+                <img class="ice" src="./img/./ice/ice.gif" id="ice">
+                <img class="cup-highlight" src="./img/cup-highlight.png">
+            </div>
+            <div class="shell-container">
+                <div class="shells">
+                    <img class="shell" src="./img/shell.png">
+                    <img src="./img/ground-coffe/ground-coffee-item.png" class="shell-item" id="itemCoffee"
+                        onclick="showItem('itemCoffee', 'groundCoffee')">
+                    <p class="item-name">Ground coffee</p>
+                </div>
+
+                <div class="shells">
+                    <img class="shell" src="./img/shell.png">
+                    <img src="./img/water/water-item.png" class="shell-item" id="itemWater" style="top: 15%;"
+                        onclick="showItem('itemWater', 'water')">
+                    <p class="item-name">Hot water</p>
+                </div>
+
+                <div class="shells">
+                    <img class="shell" src="./img/shell.png">
+                    <img src="./img/./stir/stir-item1.png" class="shell-item" id="itemStir" style="top: 15%;"
+                        onclick="showItem('itemStir', 'stir')">
+                    <p class="item-name">Stir</p>
+                </div>
+
+                <div class="shells">
+                    <img class="shell" src="./img/shell.png">
+                    <img src="./img/ice/ice-item.png" class="shell-item" id="itemIce" style="top: 25%;"
+                        onclick="showItem('itemIce', 'ice')">
+                    <p class="item-name">Ice</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-text">Copyright @2025 | Art & Develop by <span style="font-weight: bold;">A.T.</span></p>
+        </footer>
+
+</body>
+
+</html>
