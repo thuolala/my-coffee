@@ -10,13 +10,13 @@ function showItem(itemId, gifId) {
     gifItem.src = gifItem.src;
     gifItem.style.visibility = "visible";
 
-    if(itemId === "itemCoffee"){
+    if (itemId === "itemCoffee") {
         let audio = document.getElementById("audio2");
         audio.currentTime = 0; // Restart sound if already playing
         audio.play(); // Play sound
     }
 
-    if(itemId === "itemWater"){
+    if (itemId === "itemWater") {
         let audio = document.getElementById("audio1");
         audio.currentTime = 0; // Restart sound if already playing
         audio.play(); // Play sound
@@ -78,4 +78,38 @@ function coffeeReady() {
     let audio = document.getElementById("audio4");
     audio.currentTime = 0; // Restart sound if already playing
     audio.play(); // Play sound
+}
+
+function saveCupImage() {
+    const img = document.getElementById("cupItem");
+    const imageURL = img.src;
+
+    const link = document.createElement("a");
+    link.href = imageURL;
+    link.download = "my-coffee-cup.png";  // You can change the filename here
+    link.style.display = 'none';  // Hide the link so it won't appear on the screen
+    document.body.appendChild(link);  // Append the link to the document
+    link.click();  // Trigger the download
+    document.body.removeChild(link);  // Remove the link from the document after download is triggered
+}
+
+function downloadURI(uri, name) {
+    const link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link); // Clean up
+}
+
+function DownloadAsImage() {
+    const element = document.getElementById("cupItem");
+
+    html2canvas(element, {
+        useCORS: true, // Helps with images from same-origin
+        backgroundColor: null, // Optional: transparent background
+    }).then(function (canvas) {
+        const imageData = canvas.toDataURL("image/png");
+        downloadURI(imageData, "my-coffee.png");
+    });
 }

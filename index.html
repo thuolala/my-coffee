@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My Coffee</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
     <!-- CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -18,16 +19,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </head>
 
-<audio id="audio1" src="./sound/audio1.mp3"></audio>
-<audio id="audio2" src="./sound/audio2.mp3"></audio>
-<audio id="audio3" src="./sound/audio3.mp3"></audio>
-<audio id="audio4" src="./sound/audio4.mp3"></audio>
-<audio id="audio5" src="./sound/audio5.wav"></audio>
-
 <body>
+    <audio id="audio1" src="./sound/audio1.mp3"></audio>
+    <audio id="audio2" src="./sound/audio2.mp3"></audio>
+    <audio id="audio3" src="./sound/audio3.mp3"></audio>
+    <audio id="audio4" src="./sound/audio4.mp3"></audio>
+    <audio id="audio5" src="./sound/audio5.wav"></audio>
+
     <div class="container-fluid">
         <h1 id="coffeeText">
             Let's make a coffee!<br>
@@ -36,13 +38,20 @@
         <div class="main-container">
             <div class="cup-container" id="cupCoffee">
                 <img class="cup" src="./img/cup.png" id="cup">
-                <img class="ground-coffe" src="./img/./ground-coffe/ground-coffe-gif.gif" id="groundCoffee">
-                <img class="water" src="./img/./water/water.gif" id="water">
-                <img class="coffee" src="./img/./coffee/coffee.gif" id="coffee">
-                <img class="stir" src="./img/./stir/stir.gif" id="stir">
-                <img class="ice" src="./img/./ice/ice.gif" id="ice">
+                <img class="ground-coffe" src="./img/ground-coffe/ground-coffe-gif.gif" id="groundCoffee">
+                <img class="water" src="./img/water/water.gif" id="water">
+                <img class="coffee" src="./img/coffee/coffee.gif" id="coffee">
+                <img class="stir" src="./img/stir/stir.gif" id="stir">
+                <img class="ice" src="./img/ice/ice.gif" id="ice">
                 <img class="cup-highlight" src="./img/cup-highlight.png">
             </div>
+
+            <!-- <button onclick="DownloadAsImage()" style="position:fixed; top:20px; right:20px; z-index:999;" id="saveBtn">Save Cup</button>
+
+            <div id="cupItem">
+                <img src="img/cup-item.png" style="display: none;">
+            </div>             -->
+
             <div class="shell-container">
                 <div class="shells">
                     <img class="shell" src="./img/shell.png">
@@ -76,8 +85,12 @@
 
         <footer>
             <p class="footer-text">Copyright @2025 | Art & Develop by <span style="font-weight: bold;">A.T.</span></p>
+            <a class="footer-text" style="font-weight: bold; text-align: center; margin-bottom: 20px;"
+                href="https://thuolala.github.io/my-website/" target="_blank">
+                ˗ˏˋ ★ ˎˊ˗ Other Stuff ˗ˏˋ ★ ˎˊ˗
+            </a>
         </footer>
-
+    </div>
 </body>
 
 </html>
