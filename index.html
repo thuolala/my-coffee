@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </head>
 
@@ -32,6 +32,8 @@
     <audio id="audio5" src="./sound/audio5.wav"></audio>
 
     <div class="container-fluid">
+        <div id="sparkle-bg"></div>
+        
         <h1 id="coffeeText">
             Let's make a coffee!<br>
         </h1>
@@ -47,13 +49,13 @@
                 <img class="cup-highlight" src="./img/cup-highlight.png">
             </div>
 
-            <!-- <button onclick="DownloadAsImage()" style="position:fixed; top:20px; right:20px; z-index:999;" id="saveBtn">Save Cup</button>
+            <!-- <div id="cupCoffeeItem" style="width: fit-content; height: fit-content;" crossorigin="anonymous">
+                <img src="./img/cup-item.png">
+            </div>   -->
+            
+            <!-- <button onclick="downloadCoffee()" id="saveBtn">Save Cup</button>         -->
 
-            <div id="cupItem">
-                <img src="img/cup-item.png" style="display: none;">
-            </div>             -->
-
-            <div class="shell-container">
+            <div class="shell-container" id="shellasdf">
                 <div class="shells">
                     <img class="shell" src="./img/shell.png">
                     <img src="./img/ground-coffe/ground-coffee-item.png" class="shell-item" id="itemCoffee"

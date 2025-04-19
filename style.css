@@ -154,6 +154,51 @@ h1:hover {
     color: #37221B;
 }
 
+@keyframes sparkle-blink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.time-up-effect {
+    animation: sparkle-blink 0.7s ease-in-out;
+    animation-iteration-count: 6; /* 0.5s x 6 = 3 seconds of blinking */
+}
+
+#sparkle-bg {
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 30px;
+    opacity: 0.6;
+    animation: sparkleFloat 5s linear infinite;
+}
+
+@keyframes sparkleFloat {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
 footer{
     margin-top: 100px;
     display: flex;

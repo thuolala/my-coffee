@@ -80,36 +80,52 @@ function coffeeReady() {
     audio.play(); // Play sound
 }
 
-function saveCupImage() {
-    const img = document.getElementById("cupItem");
-    const imageURL = img.src;
-
-    const link = document.createElement("a");
-    link.href = imageURL;
-    link.download = "my-coffee-cup.png";  // You can change the filename here
-    link.style.display = 'none';  // Hide the link so it won't appear on the screen
-    document.body.appendChild(link);  // Append the link to the document
-    link.click();  // Trigger the download
-    document.body.removeChild(link);  // Remove the link from the document after download is triggered
-}
-
 function downloadURI(uri, name) {
-    const link = document.createElement("a");
+    var link = document.createElement("a");
+
     link.download = name;
     link.href = uri;
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link); // Clean up
+    document.body.removeChild(link);  // Clear the dynamic link after use
 }
 
-function DownloadAsImage() {
-    const element = document.getElementById("cupItem");
+function downloadCoffee() {
+    var div = document.getElementById("testContainer");
 
-    html2canvas(element, {
-        useCORS: true, // Helps with images from same-origin
-        backgroundColor: null, // Optional: transparent background
-    }).then(function (canvas) {
-        const imageData = canvas.toDataURL("image/png");
-        downloadURI(imageData, "my-coffee.png");
+    html2canvas(div, {
+        useCORS: true,  // Try to load images from external sources
+        logging: true,  // Enable logging to help debug issues
+        backgroundColor: "red",
+        onrendered: function (canvas) {
+            var myImage = canvas.toDataURL("image/png");
+        downloadURI(myImage, "my-coffee.png");
+        }
     });
 }
+
+function spawnSparkles(count) {
+    const sparkleBg = document.getElementById('sparkle-bg');
+
+    for (let i = 0; i < count; i++) {
+        const sparkle = document.createElement('img');
+        sparkle.src = './img/flag.png';
+        sparkle.className = 'sparkle';
+
+        // Random position
+        sparkle.style.left = Math.random() * 100 + 'vw';
+        sparkle.style.top = Math.random() * 100 + 'vh';
+
+        // Random animation delay
+        // sparkle.style.animationDelay = (Math.random() * 10) + 's';
+
+        sparkleBg.appendChild(sparkle);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    spawnSparkles(30);
+});
+
+
+
