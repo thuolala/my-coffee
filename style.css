@@ -155,9 +155,12 @@ h1:hover {
 }
 
 @keyframes sparkle-blink {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
@@ -165,7 +168,8 @@ h1:hover {
 
 .time-up-effect {
     animation: sparkle-blink 0.7s ease-in-out;
-    animation-iteration-count: 6; /* 0.5s x 6 = 3 seconds of blinking */
+    animation-iteration-count: 6;
+    /* 0.5s x 6 = 3 seconds of blinking */
 }
 
 #sparkle-bg {
@@ -182,7 +186,8 @@ h1:hover {
     position: absolute;
     width: 30px;
     opacity: 0.6;
-    animation: sparkleFloat 5s linear infinite;
+    animation:
+        sparkleFloat 5s linear infinite;
 }
 
 @keyframes sparkleFloat {
@@ -190,16 +195,18 @@ h1:hover {
         transform: translateY(100vh);
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         transform: translateY(-10vh);
         opacity: 0;
     }
 }
 
-footer{
+footer {
     margin-top: 100px;
     display: flex;
     justify-content: center;
